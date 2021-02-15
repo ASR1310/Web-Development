@@ -10,5 +10,6 @@ preview for:
 
 expanding_card : https://htmlpreview.github.io/?https://github.com/ASR1310/Web-Development/blob/main/expanding_card.html
 
+progress_step  : https://htmlpreview.github.io/?https://github.com/ASR1310/Web-Development/blob/main/progress_step.html
 
 web template1 : https://htmlpreview.github.io/?https://github.com/ASR1310/Web-Development/blob/main/WebTemplate1/index.html
