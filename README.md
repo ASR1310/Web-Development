@@ -12,4 +12,8 @@ expanding_card : https://htmlpreview.github.io/?https://github.com/ASR1310/Web-D
 
 progress_step  : https://htmlpreview.github.io/?https://github.com/ASR1310/Web-Development/blob/main/progress_step.html
 
+RotatingNavigation : https://htmlpreview.github.io/?https://github.com/ASR1310/Web-Development/blob/main/RotatingNav.html
+
+HiddenSearch : https://htmlpreview.github.io/?https://github.com/ASR1310/Web-Development/blob/main/HiddenSearch.html
+
 web template1 : https://htmlpreview.github.io/?https://github.com/ASR1310/Web-Development/blob/main/WebTemplate1/index.html
