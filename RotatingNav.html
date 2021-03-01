@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>rotating navigation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<style media="screen">
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background-color: #333;
+    color: #222;
+    overflow-x: hidden;
+    margin: 0;
+  }
+
+  .container {
+    background-color: #fafafa;
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px;
+  }
+
+  .container.show-nav {
+    transform: rotate(-20deg);
+  }
+
+  .circle-container {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+  }
+
+  .circle {
+    background-color: #ff7979;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.5s linear;
+  }
+
+  .container.show-nav .circle {
+    transform: rotate(-70deg);
+  }
+
+  .circle button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    background: transparent;
+    border: 0;
+    font-size: 26px;
+    color: #fff;
+  }
+
+  .circle button:focus {
+    outline: none;
+  }
+
+  .circle button#open {
+    left: 60%;
+  }
+
+  .circle button#close {
+    top: 60%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+  }
+
+  .container.show-nav + nav li {
+    transform: translateX(0);
+    transition-delay: 0.3s;
+  }
+
+  nav {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    z-index: 100;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding-left: 30px;
+  }
+
+  nav ul li {
+    text-transform: uppercase;
+    color: #fff;
+    margin: 40px 0;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in;
+  }
+
+  nav ul li i {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  nav ul li + li {
+    margin-left: 15px;
+    transform: translateX(-150%);
+  }
+
+  nav ul li + li + li {
+    margin-left: 30px;
+    transform: translateX(-200%);
+  }
+
+  .content img {
+    max-width: 100%;
+  }
+
+  .content {
+    max-width: 1000px;
+    margin: 50px auto;
+  }
+
+  .content h1 {
+    margin: 0;
+  }
+
+  .content small {
+    color: #555;
+    font-style: italic;
+  }
+
+  .content p {
+    color: #333;
+    line-height: 1.5;
+  }
+
+</style>
+  </head>
+  <body>
+    <div class="container  ">
+      <div class="circle-container">
+        <div class="circle">
+          <button id="close">
+             <i class="fas fa-times"> </i>
+          </button>
+          <button id="open">
+            <i class="fas fa-bars"></i>
+          </button>
+
+        </div>
+      </div>
+      <div class="content">
+        <h1>Amazing Article</h1>
+        <small>Website design</small>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus laudantium repellendus, ut eveniet quod, nobis nulla maiores quas, vitae blanditiis placeat culpa impedit quos quidem doloribus illo corporis. Explicabo soluta aut molestiae, sequi sit nemo rem reiciendis. Esse doloribus dolore aut aspernatur earum incidunt vel, eius, quisquam consectetur suscipit eum beatae architecto, officia dolorem officiis blanditiis natus! Mollitia repellendus quia quae deleniti aperiam, at cumque modi nam adipisci nemo cupiditate blanditiis accusamus obcaecati incidunt distinctio minima voluptas nobis quis ratione ad. Commodi iusto, in officia, quis perspiciatis consequuntur delectus assumenda repudiandae veniam eum, illo repellendus non tenetur impedit similique quasi.</p>
+        <h3>My Click</h3>
+        <img src="https://i.pinimg.com/originals/c9/b8/d8/c9b8d832d20ea92cbd8ca14ab41a9b5f.jpg" alt="">
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><i class="fas fa-home"></i>Home</li>
+          <li><i class="fas fa-user-alt"></i>About</li>
+            <li><i class="fas fa-envelope"></i>Contact</li>
+
+      </ul>
+    </nav>
+    <script>
+      const open = document.getElementById('open')
+      const close = document.getElementById('close')
+      const container = document.querySelector('.container')
+
+      open.addEventListener('click', () => container.classList.add('show-nav'))
+
+      close.addEventListener('click', () => container.classList.remove('show-nav'))
+
+    </script>
+  </body>
+</html>
